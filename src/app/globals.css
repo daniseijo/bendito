@@ -11,6 +11,14 @@
     @apply text-xl;
     @apply font-anton;
   }
+
+  input,
+  textarea,
+  button,
+  select,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 @layer base {
