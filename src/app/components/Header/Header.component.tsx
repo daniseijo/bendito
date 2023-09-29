@@ -1,23 +1,46 @@
+'use client'
+
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 import { HeaderLinkList } from './HeaderLinkList.component'
-import { HamburgerMenuList } from './HamburgerMenuList.component'
+import { HamburgerMenuButton } from './HamburgerMenuButton.component'
 import logo from '../../../../public/logo.svg'
+import { useState } from 'react'
 
 export type HeaderProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
 
-export async function Header({ className, ...otherProps }: HeaderProps) {
+export function Header({ className, ...otherProps }: HeaderProps) {
+  let [isOpen, setIsOpen] = useState(false)
+
   return (
     <header
-      className={clsx(className, 'mx-auto flex  w-full justify-between px-6 py-2  lg:justify-around lg:py-6')}
+      className={clsx(
+        className,
+        isOpen && 'h-60',
+        'flex w-full justify-between px-6 py-2 transition-all delay-150 ease-in-out lg:justify-around lg:py-6',
+      )}
       {...otherProps}
     >
-      <Link className="flex" href="/">
-        <Image src={logo} alt="Bendito Bodorrio Logo" style={{ width: 'fit-content', height: '100%' }} />
+      <Link className="m-0 md:flex" href="/">
+        <Image className="h-16 w-fit lg:h-full" src={logo} alt="Bendito Bodorrio Logo" />
       </Link>
-      <HamburgerMenuList className="flex lg:hidden" links={headerLinks} />
-      <HeaderLinkList className="hidden lg:flex lg:flex-shrink-0 lg:items-center" links={headerLinks} />
+      <HeaderLinkList className="hidden md:flex md:flex-shrink-0 md:items-center" links={headerLinks} />
+      <nav
+        className={clsx(
+          isOpen && 'max-h-60',
+          '-ml-24 mt-24 max-h-0 w-full overflow-hidden transition-all delay-150 ease-in-out md:hidden',
+        )}
+      >
+        <ul className="flex flex-col">
+          {headerLinks.map(({ name, href }) => (
+            <li className="pb-5" key={`${href}-${name}`}>
+              <a href={href}>{name}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <HamburgerMenuButton className="mt-5 md:hidden" isOpen={isOpen} setIsOpen={setIsOpen} />
     </header>
   )
 }
