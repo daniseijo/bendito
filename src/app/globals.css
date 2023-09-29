@@ -2,21 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  body {
+    @apply bg-primary-main;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+@layer utilities {
+  .content {
+    @apply mx-auto w-full p-4 lg:w-[1024px];
+  }
+
+  .underline-animation {
+    @apply origin-left transform-gpu after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:scale-x-100 after:bg-current after:transition-transform after:duration-200;
+  }
 }

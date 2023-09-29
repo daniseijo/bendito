@@ -10,17 +10,15 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          main: '#000',
-          accent: '#91a36e',
-          detail: '#91a36e',
+          main: '#110127',
+          accent: '#f72c8a',
         },
         secondary: {
-          main: '#facd9d',
-          accent: '#f5b17d',
+          main: '#36eee0',
         },
         typography: {
-          main: 'rgb(51, 51, 51)',
-          secondary: '#777',
+          main: '#fff',
+          secondary: '#616367',
         },
       },
     },
