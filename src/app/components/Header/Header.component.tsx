@@ -10,10 +10,7 @@ export type HeaderProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLEleme
 export async function Header({ className, ...otherProps }: HeaderProps) {
   return (
     <header
-      className={clsx(
-        className,
-        'mx-auto flex h-20 w-full justify-between px-6 py-2 lg:h-40 lg:justify-around lg:py-6',
-      )}
+      className={clsx(className, 'mx-auto flex  w-full justify-between px-6 py-2  lg:justify-around lg:py-6')}
       {...otherProps}
     >
       <Link className="flex" href="/">
