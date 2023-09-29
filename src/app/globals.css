@@ -4,7 +4,9 @@
 
 @layer base {
   h1 {
-    @apply text-8xl;
+    @apply text-4xl;
+    @apply md:text-6xl;
+    @apply lg:text-8xl;
     @apply font-anton;
   }
   h2 {
