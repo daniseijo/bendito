@@ -17,7 +17,7 @@ export async function Header({ className, ...otherProps }: HeaderProps) {
       {...otherProps}
     >
       <Link className="flex" href="/">
-        <Image src={logo} alt="Bendito Bodorrio Logo" style={{ width: 'auto', height: '100%' }} />
+        <Image src={logo} alt="Bendito Bodorrio Logo" style={{ width: 'fit-content', height: '100%' }} />
       </Link>
       <HamburgerMenuList className="flex lg:hidden" links={headerLinks} />
       <HeaderLinkList className="hidden lg:flex lg:flex-shrink-0 lg:items-center" links={headerLinks} />
