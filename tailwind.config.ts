@@ -8,13 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ['var(--font-inter)'],
+        anton: ['var(--font-anton)'],
+      },
       colors: {
         primary: {
-          main: '#110127',
-          accent: '#f72c8a',
+          main: '#1d0131',
+          accent: '#110127',
         },
         secondary: {
-          main: '#36eee0',
+          main: '#f72c8a',
+          accent: '#36eee0',
         },
         typography: {
           main: '#fff',

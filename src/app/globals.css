@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 @layer base {
+  h1 {
+    @apply text-8xl;
+    @apply font-anton;
+  }
+  h2 {
+    @apply text-xl;
+    @apply font-anton;
+  }
+}
+
+@layer base {
   body {
     @apply bg-primary-main;
   }
@@ -10,7 +21,7 @@
 
 @layer utilities {
   .content {
-    @apply mx-auto w-full p-4 lg:w-[1024px];
+    @apply mx-auto w-full p-6;
   }
 
   .underline-animation {

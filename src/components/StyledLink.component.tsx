@@ -14,8 +14,8 @@ export function StyledLink({ className, isActive, ...otherProps }: StyledLinkPro
     <Link
       className={clsx(
         className,
-        'transition-color relative px-6 py-2 duration-200 ease-in-out after:scale-x-0 hover:bg-primary-accent hover:after:scale-x-100',
-        isActive ? 'bg-primary-accent after:scale-x-100' : 'bg-typography-transparent',
+        'transition-color relative px-6 py-2 duration-500 ease-in-out after:scale-x-0  hover:bg-secondary-accent hover:text-typography-secondary hover:after:scale-x-100',
+        isActive && 'bg-secondary-main after:scale-x-100',
       )}
       {...otherProps}
     />

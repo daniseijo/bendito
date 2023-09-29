@@ -1,10 +1,21 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Anton } from 'next/font/google'
 import { Header } from './components/Header'
 import clsx from 'clsx'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-anton',
+})
+
+const anton = Anton({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-anton',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,14 +24,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${anton.variable}`}>
       <body
         className={clsx(
           inter.className,
-          'flex min-h-screen flex-col justify-between leading-relaxed text-typography-main',
+          'text-typography-main flex min-h-screen flex-col justify-between leading-relaxed',
         )}
       >
-        <Header className="flex-shrink-0" />
+        <Header className="bg-primary-accent min-w-screen" />
 
         <main className="flex min-h-screen flex-col items-center justify-between p-24">{children}</main>
       </body>

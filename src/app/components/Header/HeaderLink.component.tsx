@@ -7,7 +7,7 @@ import { StyledLink, StyledLinkProps } from '@/components/StyledLink.component'
 export type HeaderLinkProps = StyledLinkProps
 
 export function HeaderLink({ href, ...otherProps }: HeaderLinkProps) {
-  const pathname = usePathname()
+  const pathname = `/${usePathname().split('/')[1]}`
   const isLinkActive = href === pathname
 
   return <StyledLink href={href} isActive={isLinkActive} {...otherProps} />
