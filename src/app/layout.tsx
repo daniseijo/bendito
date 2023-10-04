@@ -28,10 +28,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={clsx(
           inter.className,
-          'text-typography-main flex min-h-screen flex-col justify-between leading-relaxed',
+          'flex min-h-screen flex-col justify-between leading-relaxed text-typography-main',
         )}
       >
-        <Header className="bg-primary-accent min-w-screen fixed top-0 h-20 lg:h-40" />
+        <Header className="min-w-screen fixed top-0 bg-primary-accent" />
         <main className="mt-20 flex min-h-screen flex-col items-center justify-between p-8 text-center md:p-24 md:text-start lg:mt-40">
           {children}
         </main>
