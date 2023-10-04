@@ -41,7 +41,7 @@ export function Carousel({ imagesList, className, ...otherProps }: CarouselProps
       >
         {imagesList.map((image) => (
           <SwiperSlide key={image.src}>
-            <Image width={image.width} height={image.height} alt={image.alt} src={image.src} />
+            <Image priority={true} width={image.width} height={image.height} alt={image.alt} src={image.src} />
           </SwiperSlide>
         ))}
       </Swiper>
