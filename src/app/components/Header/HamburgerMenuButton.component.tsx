@@ -31,15 +31,4 @@ export function HamburgerMenuButton({ isOpen, setIsOpen, ...otherProps }: Hambur
       )}
     </div>
   )
-  // return (
-  //   <nav className={className} {...otherProps}>
-  //     <ul className="flex justify-between gap-4">
-  //       {links.map(({ name, href }) => (
-  //         <li key={`${href}-${name}`}>
-  //           <HeaderLink href={href}>{name}</HeaderLink>
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   </nav>
-  // )
 }

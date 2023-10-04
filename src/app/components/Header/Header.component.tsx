@@ -7,14 +7,15 @@ import { HeaderLinkList } from './HeaderLinkList.component'
 import { HamburgerMenuButton } from './HamburgerMenuButton.component'
 import logo from '../../../../public/logo.svg'
 import { useEffect, useState } from 'react'
+import { ExtendableStyles } from '@/utils/types'
 
-export type HeaderProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
+export type HeaderProps = ExtendableStyles
 
 export function Header({ className, ...otherProps }: HeaderProps) {
   let [isOpen, setIsOpen] = useState(false)
   let [isScrolling, setScrolling] = useState(false)
 
-  const handleScroll = () => setScrolling(window.scrollY > 80)
+  const handleScroll = () => setScrolling(window.scrollY > 40)
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -25,9 +26,9 @@ export function Header({ className, ...otherProps }: HeaderProps) {
     <header
       className={clsx(
         className,
-        isScrolling && 'lg:h-20 lg:delay-75',
-        isOpen && 'h-60 delay-150',
-        'flex h-20 w-full justify-between px-6 py-2 transition-all ease-in-out lg:h-40 lg:justify-around lg:py-6',
+        'flex  w-full justify-between px-6 py-2 transition-all delay-150 ease-in-out lg:justify-around lg:py-6 lg:delay-75',
+        isScrolling ? 'lg:h-20' : 'lg:h-40',
+        isOpen ? 'h-60' : 'h-20',
       )}
       {...otherProps}
     >
