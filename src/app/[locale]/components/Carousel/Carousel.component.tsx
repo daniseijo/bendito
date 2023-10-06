@@ -6,7 +6,6 @@ import { Swiper as SwiperType } from 'swiper'
 
 // Import Swiper styles
 import 'swiper/css'
-import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 // import required modules
@@ -28,7 +27,7 @@ export function Carousel({ imagesList, className, ...otherProps }: CarouselProps
   return (
     <div className={clsx(className, 'relative')}>
       <ChevronLeftIcon
-        className="absolute left-0 top-1/2 z-10 w-10 -translate-y-1/2 transform lg:w-24"
+        className="absolute left-0 top-1/2 z-10 w-10 -translate-y-1/2 transform cursor-pointer lg:w-24"
         onClick={() => swiperRef.current?.slidePrev()}
       />
       <Swiper
@@ -49,7 +48,7 @@ export function Carousel({ imagesList, className, ...otherProps }: CarouselProps
       </Swiper>
 
       <ChevronRightIcon
-        className="absolute right-0 top-1/2 z-10 w-10 -translate-y-1/2 transform lg:w-24"
+        className="absolute right-0 top-1/2 z-10 w-10 -translate-y-1/2 transform cursor-pointer lg:w-24"
         onClick={() => swiperRef.current?.slideNext()}
       />
     </div>

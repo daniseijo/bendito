@@ -12,7 +12,7 @@ export function Button({ variant = 'contained', className, children, ...otherPro
       className={clsx(
         className,
         variantClass,
-        'border-2 px-10 py-3 text-sm uppercase transition-colors duration-100 ease-in-out disabled:opacity-50',
+        'border-2 px-10 py-3 text-sm uppercase transition-colors duration-100 ease-in-out disabled:cursor-not-allowed disabled:opacity-50',
       )}
       {...otherProps}
     >
