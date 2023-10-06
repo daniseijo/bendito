@@ -5,6 +5,7 @@ import { Header } from './components/Header'
 import clsx from 'clsx'
 import { notFound } from 'next/navigation'
 import { FormattedMessage } from '@/components/FormattedMessage.component'
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -48,6 +49,7 @@ export default function RootLayout({
         <main className="mt-20 flex min-h-screen flex-col  p-8 text-center md:p-24 md:text-start lg:mt-40">
           {children}
         </main>
+        <Analytics />
       </body>
     </html>
   )
