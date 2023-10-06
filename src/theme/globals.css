@@ -29,12 +29,3 @@
   }
 }
 
-@layer utilities {
-  .content {
-    @apply mx-auto w-full p-6;
-  }
-
-  .underline-animation {
-    @apply origin-left transform-gpu after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:scale-x-100 after:bg-current after:transition-transform after:duration-200;
-  }
-}

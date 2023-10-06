@@ -47,7 +47,7 @@ export default function RootLayout({
         )}
       >
         <Header links={headerLinks} className="min-w-screen fixed top-0 z-50 bg-primary-accent" />
-        <main className="mt-20 flex min-h-screen flex-col  p-8 text-center md:p-24 md:text-start lg:mt-40">
+        <main className="mx-auto mt-24 w-full p-4 md:mt-32 lg:mt-48 xl:w-[1280px]">
           {children}
           <Analytics />
         </main>
