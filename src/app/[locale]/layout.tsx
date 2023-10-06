@@ -1,6 +1,6 @@
 import '@/theme/globals.css'
 import type { Metadata } from 'next'
-import { Inter, Anton, Poppins } from 'next/font/google'
+import { Anton, Poppins } from 'next/font/google'
 import { Header } from './components/Header'
 import clsx from 'clsx'
 import { notFound } from 'next/navigation'
