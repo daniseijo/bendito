@@ -10,11 +10,6 @@ export type HamburgerMenuButtonProps = ExtendableStyles & {
   setIsOpen: Dispatch<SetStateAction<boolean>>
 }
 
-export type HeaderLinkData = {
-  name: React.ReactNode
-  href: string
-}
-
 export function HamburgerMenuButton({ isOpen, setIsOpen, ...otherProps }: HamburgerMenuButtonProps) {
   return (
     <div {...otherProps}>

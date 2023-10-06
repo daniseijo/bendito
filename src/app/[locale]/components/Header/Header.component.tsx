@@ -3,15 +3,17 @@
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
-import { HeaderLinkList } from './HeaderLinkList.component'
+import { HeaderLinkData, HeaderLinkList } from './HeaderLinkList.component'
 import { HamburgerMenuButton } from './HamburgerMenuButton.component'
-import logo from '../../../../public/logo.svg'
+import logo from '../../../../../public/logo.svg'
 import { useEffect, useState } from 'react'
 import { ExtendableStyles } from '@/utils/types'
 
-export type HeaderProps = ExtendableStyles
+export type HeaderProps = ExtendableStyles & {
+  links: HeaderLinkData[]
+}
 
-export function Header({ className, ...otherProps }: HeaderProps) {
+export function Header({ links, className, ...otherProps }: HeaderProps) {
   let [isOpen, setIsOpen] = useState(false)
   let [isScrolling, setScrolling] = useState(false)
 
@@ -39,7 +41,7 @@ export function Header({ className, ...otherProps }: HeaderProps) {
           alt="Bendito Bodorrio Logo"
         />
       </Link>
-      <HeaderLinkList className="hidden md:flex md:flex-shrink-0 md:items-center" links={headerLinks} />
+      <HeaderLinkList className="hidden md:flex md:flex-shrink-0 md:items-center" links={links} />
       <nav
         className={clsx(
           isOpen && 'max-h-60',
@@ -47,7 +49,7 @@ export function Header({ className, ...otherProps }: HeaderProps) {
         )}
       >
         <ul className="flex flex-col">
-          {headerLinks.map(({ name, href }) => (
+          {links.map(({ name, href }) => (
             <li className="pb-5" key={`${href}-${name}`}>
               <a href={href}>{name}</a>
             </li>
@@ -58,18 +60,3 @@ export function Header({ className, ...otherProps }: HeaderProps) {
     </header>
   )
 }
-
-const headerLinks = [
-  {
-    name: 'Home',
-    href: '/',
-  },
-  {
-    name: 'Services',
-    href: '/services',
-  },
-  {
-    name: 'Contact',
-    href: '/contact',
-  },
-]

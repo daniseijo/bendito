@@ -16,7 +16,7 @@ import { ExtendableStyles } from '@/utils/types'
 import { useRef } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
-import { CarouselImage } from '@/app/types'
+import { CarouselImage } from './Carousel.types'
 
 export type CarouselProps = ExtendableStyles & {
   imagesList: CarouselImage[]
