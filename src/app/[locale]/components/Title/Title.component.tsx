@@ -1,5 +1,4 @@
 import { ExtendableStyles } from '@/utils/types'
-import clsx from 'clsx'
 
 export type TitleProps = ExtendableStyles & {
   title: string
