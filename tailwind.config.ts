@@ -12,6 +12,9 @@ const config: Config = {
         poppins: ['var(--font-poppins)'],
         anton: ['var(--font-anton)'],
       },
+      spacing: {
+        '128': '32rem',
+      },
       colors: {
         primary: {
           main: '#1d0131',
