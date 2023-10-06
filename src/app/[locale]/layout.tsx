@@ -1,16 +1,17 @@
 import '@/theme/globals.css'
 import type { Metadata } from 'next'
-import { Inter, Anton } from 'next/font/google'
+import { Inter, Anton, Poppins } from 'next/font/google'
 import { Header } from './components/Header'
 import clsx from 'clsx'
 import { notFound } from 'next/navigation'
 import { FormattedMessage } from '@/components/FormattedMessage.component'
 import { Analytics } from '@vercel/analytics/react'
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-anton',
+  weight: '400',
+  variable: '--font-poppins',
 })
 
 const anton = Anton({
@@ -38,18 +39,18 @@ export default function RootLayout({
   if (!isValidLocale) notFound()
 
   return (
-    <html lang={locale} className={`${inter.variable} ${anton.variable}`}>
+    <html lang={locale} className={`${poppins.variable} ${anton.variable}`}>
       <body
         className={clsx(
-          inter.className,
+          poppins.className,
           'flex min-h-screen flex-col justify-between leading-relaxed text-typography-main',
         )}
       >
         <Header links={headerLinks} className="min-w-screen fixed top-0 z-50 bg-primary-accent" />
         <main className="mt-20 flex min-h-screen flex-col  p-8 text-center md:p-24 md:text-start lg:mt-40">
           {children}
+          <Analytics />
         </main>
-        <Analytics />
       </body>
     </html>
   )
