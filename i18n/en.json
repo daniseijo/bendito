@@ -7,6 +7,12 @@
   },
   "home": {
     "title": "Alternative weddings",
-    "subtitle": "A new wedding concept to change everything."
+    "subtitle": "A new wedding concept to change everything.",
+    "firstCard": {
+      "title": "Bendito Bodorrio",
+      "text": "Bendito Bodorrio is a company focused on providing a service that seeks to provide a unique and groundbreaking wedding experience, dissociating itself from the traditional and religious conception of them. This service is aimed at couples who want a wedding that reflects their personality and ideals, in which their fundamental rights are respected and diversity is encouraged.",
+      "link": "Our services",
+      "imageAlt": "Photographer in a church"
+    }
   }
 }

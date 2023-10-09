@@ -1,33 +1,77 @@
-import { Button } from '@/components/Button.component'
-import MaterialButton from '@/components/MaterialButton.component'
+'use client'
 
-export function Card() {
+import { Button } from '@/components/Button.component'
+import { ExtendableStyles } from '@/utils/types'
+import clsx from 'clsx'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRef } from 'react'
+import { useIntersectionObserver } from 'usehooks-ts'
+
+export type CardProps = ExtendableStyles & {
+  title: string
+  text: string
+  link: {
+    title: string
+    href: string
+  }
+  image: {
+    src: string
+    alt: string
+  }
+}
+
+export function Card({ title, text, link, image, className, ...otherProps }: CardProps) {
+  const ref = useRef<HTMLDivElement | null>(null)
+  const entry = useIntersectionObserver(ref, { freezeOnceVisible: true })
+  const isVisible = !!entry?.isIntersecting
+
   return (
-    <div className="h-128 w-full bg-primary-accent p-4">
-      <h2>Testing buttons</h2>
-      <br />
-      <Button className="mb-2 mr-4">Click me!</Button>
-      <Button className="mr-4" variant="outlined">
-        Click me!
-      </Button>
-      <Button className="mr-4" disabled>
-        Click me!
-      </Button>
-      <Button className="mr-4" variant="outlined" disabled>
-        Click me!
-      </Button>
-      <h2 className="mt-4">Testing material buttons</h2>
-      <br />
-      <MaterialButton className="mr-4">Click me!</MaterialButton>
-      <MaterialButton className="mr-4" variant="outlined">
-        Click me!
-      </MaterialButton>
-      <MaterialButton className="mr-4" disabled>
-        Click me!
-      </MaterialButton>
-      <MaterialButton className="mr-4" variant="outlined" disabled>
-        Click me!
-      </MaterialButton>
+    <div
+      ref={ref}
+      className={clsx(
+        className,
+        'from-primary-darker flex w-full flex-wrap bg-gradient-to-r to-primary-accent p-8 lg:flex-nowrap ',
+      )}
+      {...otherProps}
+    >
+      <div
+        className={clsx(
+          'flex h-full w-full -translate-x-full flex-col items-center opacity-0 transition-all duration-1000 ease-out lg:items-start lg:pr-8',
+          isVisible && 'translate-x-0 opacity-100',
+        )}
+      >
+        <h2>{title}</h2>
+        <p className="mt-8 w-full text-sm">{text}</p>
+
+        <Link className="mt-8 lg:mt-24" href={link.href} passHref>
+          <Button variant="contained">{link.title}</Button>
+        </Link>
+      </div>
+      <Image
+        className={clsx(
+          'mt-8 h-full w-full translate-x-full opacity-0 transition-all duration-1000 ease-out lg:mt-0',
+          isVisible && 'translate-x-0 opacity-100',
+        )}
+        height={600}
+        width={875}
+        src={image.src}
+        alt={image.alt}
+      />
     </div>
   )
 }
+
+//   return (
+//     <div className={clsx(className, 'from-primary-darker  w-full bg-gradient-to-r to-primary-accent p-4')}>
+//       <h2>{title}</h2>
+//       <br />
+//       <span>{text}</span>
+
+//       <Link href="/about">Nuestros servicios</Link>
+//       <Button className="mt-4" variant="outlined" disabled>
+//         Click me!
+//       </Button>
+//     </div>
+//   )
+// }

@@ -7,6 +7,12 @@
   },
   "home": {
     "title": "Bodas alternativas",
-    "subtitle": "Un nuevo concepto de boda para cambiarlo todo."
+    "subtitle": "Un nuevo concepto de boda para cambiarlo todo.",
+    "firstCard": {
+      "title": "Bendito Bodorrio",
+      "text": "Bendito Bodorrio es una empresa enfocada en proporcionar un servicio que busca dar una experiencia única y rompedora en bodas, disociándose de la concepción tradicional y religiosa de las mismas. Este servicio está dirigido a parejas que desean una boda que refleje su personalidad y sus ideales, en la que se respeten sus derechos fundamentales y se fomente la diversidad.",
+      "link": "Nuestros servicios",
+      "imageAlt": "Un fotógrafo dentro de una iglesia"
+    }
   }
 }

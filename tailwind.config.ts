@@ -1,6 +1,6 @@
-import withMT from '@material-tailwind/react/utils/withMT'
+import type { Config } from 'tailwindcss'
 
-const config = withMT({
+const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -17,8 +17,9 @@ const config = withMT({
       },
       colors: {
         primary: {
-          main: '#1d0131',
-          accent: '#110127',
+          main: '#110127',
+          accent: '#1d0131',
+          darker: '#02021b',
         },
         secondary: {
           main: '#f72c8a',
@@ -32,6 +33,6 @@ const config = withMT({
     },
   },
   plugins: [],
-})
+}
 
 export default config

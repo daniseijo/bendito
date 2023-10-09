@@ -10,8 +10,14 @@ export default function Home() {
   return (
     <div>
       <Title title={t('title')} subtitle={t('subtitle')} />
-      <Carousel imagesList={carouselImages} className="mb-4 mt-6" />
-      <Card />
+      <Carousel imagesList={carouselImages} className="mt-6" />
+      <Card
+        className="mb-4 mt-6"
+        title={t('firstCard.title')}
+        text={t('firstCard.text')}
+        link={{ title: t('firstCard.link'), href: '/services' }}
+        image={{ src: '/church-photographer.jpeg', alt: t('firstCard.imageAlt') }}
+      />
     </div>
   )
 }
