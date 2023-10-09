@@ -37,8 +37,8 @@ export function Card({ title, text, link, image, className, ...otherProps }: Car
     >
       <div
         className={clsx(
-          'flex h-full w-full -translate-x-full flex-col items-center opacity-0 transition-all duration-1000 ease-out lg:items-start lg:pr-8',
-          isVisible && 'translate-x-0 opacity-100',
+          isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0',
+          'flex h-full w-full flex-col items-center  transition-all duration-1000 ease-out lg:items-start lg:pr-8',
         )}
       >
         <h2>{title}</h2>
@@ -50,8 +50,8 @@ export function Card({ title, text, link, image, className, ...otherProps }: Car
       </div>
       <Image
         className={clsx(
-          'mt-8 h-full w-full translate-x-full opacity-0 transition-all duration-1000 ease-out lg:mt-0',
-          isVisible && 'translate-x-0 opacity-100',
+          isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0',
+          'mt-8 h-full w-full transition-all duration-1000 ease-out lg:mt-0',
         )}
         height={600}
         width={875}
