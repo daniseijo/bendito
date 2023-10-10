@@ -31,7 +31,7 @@ export function Card({ title, text, link, image, className, ...otherProps }: Car
       ref={ref}
       className={clsx(
         className,
-        'from-primary-darker flex w-full flex-wrap bg-gradient-to-r to-primary-accent p-8 lg:flex-nowrap ',
+        'flex w-full flex-wrap overflow-hidden bg-gradient-to-r from-primary-darker to-primary-accent p-8 lg:flex-nowrap ',
       )}
       {...otherProps}
     >
